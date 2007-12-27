@@ -7,6 +7,7 @@ Build-Depends: cdbs, debhelper (>= 5)
 Standards-Version: 3.7.3
 Vcs-Git: git://heh.fi/ion/apt-mark-sync.git
 Vcs-Browser: http://gitweb.heh.fi/?p=ion/apt-mark-sync.git
+Homepage: http://johan.kiviniemi.name/software/apt-mark-sync/
 
 Package: apt-mark-sync
 Architecture: all
@@ -26,5 +27,3 @@ Description: synchronize auto-installed status between package managers
  .
  ams-run runs the given command line, detects the package manager from it
  and apt-mark-syncs from its database to the other package managers.
- .
- Homepage: http://johan.kiviniemi.name/software/apt-mark-sync/
