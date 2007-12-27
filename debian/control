@@ -1,0 +1,30 @@
+Source: apt-mark-sync
+Section: utils
+Priority: extra
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+XSBC-Original-Maintainer: Johan Kiviniemi <debian@johan.kiviniemi.name>
+Build-Depends: cdbs, debhelper (>= 5)
+Standards-Version: 3.7.3
+Vcs-Git: git://heh.fi/ion/apt-mark-sync.git
+Vcs-Browser: http://gitweb.heh.fi/?p=ion/apt-mark-sync.git
+
+Package: apt-mark-sync
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby
+Suggests: apt, aptitude, debfoster, deborphan
+Description: synchronize auto-installed status between package managers
+ Currently apt, aptitude, debfoster and deborphan each keep their own
+ status database of which packages have been installed manually (i.e. the
+ user requested their installation) and which have been installed
+ automatically (i.e. they were installed as dependencies of manually
+ installed packages).
+ .
+ apt-mark-sync reads the status for each package from one of the databases
+ and writes it to the others. For instance, if you set a package as
+ manually installed in debfoster and run 'apt-mark-sync debfoster apt
+ aptitude', both apt and aptitude consider it to be manually installed.
+ .
+ ams-run runs the given command line, detects the package manager from it
+ and apt-mark-syncs from its database to the other package managers.
+ .
+ Homepage: http://johan.kiviniemi.name/software/apt-mark-sync/

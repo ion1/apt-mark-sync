@@ -1,0 +1,3 @@
+ams-run usr/bin
+apt-mark-sync usr/bin
+lib usr/share/apt-mark-sync
