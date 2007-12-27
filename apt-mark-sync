@@ -1,0 +1,52 @@
+#!/usr/bin/ruby
+
+# apt-mark-sync – synchronize ‘automatically installed’ field between programs
+# Copyright © 2007  Johan Kiviniemi
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+# more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51
+# Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+[
+  File.join(File.dirname(__FILE__), 'lib'),
+  '/usr/share/apt-mark-sync/lib',
+  '/usr/local/share/apt-mark-sync/lib',
+].each {|dir| $LOAD_PATH << dir }
+
+require 'apt-marks'
+require 'apt-marks/logger'
+
+if ARGV.empty?
+  puts "USAGE: #$0 READER [all | WRITER ...]",
+    "",
+    "Readers: #{AptMarks::READERS.keys.sort.join(' ')}",
+    "Writers: #{AptMarks::WRITERS.keys.sort.join(' ')}",
+    ""
+
+  exit 1
+
+else
+  from = ARGV.shift
+  to   = ARGV.dup
+
+  if to == ['all']
+    to = AptMarks::WRITERS.keys.sort - [from, 'debug']
+  end
+
+  begin
+    AptMarks.sync from, to
+  rescue => e
+    AptMarks::Logger.instance.error "#{e.class}: #{e}"
+    exit 1
+  end
+end

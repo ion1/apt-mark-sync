@@ -1,0 +1,50 @@
+AMS-RUN(1)
+==========
+:Author: Johan Kiviniemi
+:Email:  debian@johan.kiviniemi.name
+
+
+NAME
+----
+ams-run - run the given package manager and apt-mark-sync from it
+
+
+SYNOPSIS
+--------
+*ams-run* 'COMMANDLINE'
+
+
+DESCRIPTION
+-----------
+*ams-run* runs 'COMMANDLINE' and detects the package manager (such as aptitude
+or debfoster) from it. On success, it syncs packages' auto-installed states
+from the package manager's database to other package managers.
+
+
+EXAMPLES
+--------
+*$$ams-run aptitude install debfoster$$*::
+  Installs debfoster using aptitude and synchronizes from aptitude to apt,
+  debfoster and deborphan.
+
+*$$ams-run debfoster$$*::
+  Runs debfoster and synchronizes from debfoster to apt, aptitude and
+  deborphan.
+
+
+AUTHOR
+------
+Written by Johan Kiviniemi <mailto:debian@johan.kiviniemi.name[]>
+
+
+RESOURCES
+---------
+Web site: http://johan.kiviniemi.name/software/apt-mark-sync/[]
+
+Bzr branch: http://johan.kiviniemi.name/software/bzr/apt-mark-sync/[]
+
+
+SEE ALSO
+--------
+*apt-mark-sync*(1)
+

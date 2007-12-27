@@ -1,0 +1,52 @@
+.\"     Title: apt-mark-sync
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.72.0 <http://docbook.sf.net/>
+.\"      Date: 09/23/2007
+.\"    Manual: 
+.\"    Source: 
+.\"
+.TH "APT\-MARK\-SYNC" "1" "09/23/2007" "" ""
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+apt\-mark\-sync \- synchronize the 'automatically installed' field between package managers
+.SH "SYNOPSIS"
+\fBapt\-mark\-sync\fR \fIREADER\fR [all | \fIWRITER\fR \&...]
+.sp
+.SH "DESCRIPTION"
+Currently \fBapt\fR, \fBaptitude\fR, \fBdebfoster\fR and \fBdeborphan\fR each keep their own status database of which packages have been installed manually (i.e. the user requested their installation) and which have been installed automatically (i.e. they were installed as dependencies of manually installed packages).
+.sp
+apt\-mark\-sync reads the status for each package from one of the databases and writes it to the others. For instance, if you set a package as manually installed in debfoster and run \fBapt\-mark\-sync debfoster apt aptitude\fR, both apt and aptitude consider it to be manually installed.
+.sp
+Note that it's not recommended to use apt as a sync source, since it's much easier to manage the packages' auto\-installed status with debfoster, deborphan or aptitude.
+.sp
+.SH "EXAMPLES"
+.PP
+\fBaptitude install debfoster; apt\-mark\-sync aptitude all\fR
+.RS 4
+Synchronizes from aptitude to apt, debfoster and deborphan.
+.RE
+.PP
+\fBdebfoster; apt\-mark\-sync debfoster all\fR
+.RS 4
+Synchronizes from debfoster to apt, aptitude and deborphan.
+.RE
+.SH "AUTHOR"
+Written by Johan Kiviniemi <\fIdebian@johan.kiviniemi.name\fR\&[1]>
+.sp
+.SH "RESOURCES"
+Web site: \fIhttp://johan.kiviniemi.name/software/apt\-mark\-sync/\fR
+.sp
+Bzr branch: \fIhttp://johan.kiviniemi.name/software/bzr/apt\-mark\-sync/\fR
+.sp
+.SH "SEE ALSO"
+\fBams\-run\fR(1)
+.sp
+.SH "REFERENCES"
+.IP " 1." 4
+debian@johan.kiviniemi.name
+.RS 4
+\%mailto:debian@johan.kiviniemi.name
+.RE

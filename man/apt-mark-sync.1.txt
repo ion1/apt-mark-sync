@@ -1,0 +1,59 @@
+APT-MARK-SYNC(1)
+================
+:Author: Johan Kiviniemi
+:Email:  debian@johan.kiviniemi.name
+
+
+NAME
+----
+apt-mark-sync - synchronize the 'automatically installed' field between package
+managers
+
+
+SYNOPSIS
+--------
+*apt-mark-sync* 'READER' [all | 'WRITER' ...]
+
+
+DESCRIPTION
+-----------
+Currently *apt*, *aptitude*, *debfoster* and *deborphan* each keep their own
+status database of which packages have been installed manually (i.e. the user
+requested their installation) and which have been installed automatically (i.e.
+they were installed as dependencies of manually installed packages).
+
+apt-mark-sync reads the status for each package from one of the databases and
+writes it to the others. For instance, if you set a package as manually
+installed in debfoster and run *apt-mark-sync debfoster apt aptitude*, both apt
+and aptitude consider it to be manually installed.
+
+Note that it's not recommended to use apt as a sync source, since it's much
+easier to manage the packages' auto-installed status with debfoster, deborphan
+or aptitude.
+
+
+EXAMPLES
+--------
+*$$aptitude install debfoster; apt-mark-sync aptitude all$$*::
+  Synchronizes from aptitude to apt, debfoster and deborphan.
+
+*$$debfoster; apt-mark-sync debfoster all$$*::
+  Synchronizes from debfoster to apt, aptitude and deborphan.
+
+
+AUTHOR
+------
+Written by Johan Kiviniemi <mailto:debian@johan.kiviniemi.name[]>
+
+
+RESOURCES
+---------
+Web site: http://johan.kiviniemi.name/software/apt-mark-sync/[]
+
+Bzr branch: http://johan.kiviniemi.name/software/bzr/apt-mark-sync/[]
+
+
+SEE ALSO
+--------
+*ams-run*(1)
+

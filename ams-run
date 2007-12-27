@@ -1,0 +1,63 @@
+#!/usr/bin/ruby
+
+# apt-mark-sync – synchronize ‘automatically installed’ field between programs
+# Copyright © 2007  Johan Kiviniemi
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+# more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51
+# Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+[
+  File.join(File.dirname(__FILE__), 'lib'),
+  '/usr/share/apt-mark-sync/lib',
+  '/usr/local/share/apt-mark-sync/lib',
+].each {|dir| $LOAD_PATH << dir }
+
+require 'apt-marks'
+require 'apt-marks/logger'
+require 'apt-marks/utils'
+
+if ARGV.empty?
+  puts "USAGE: #$0 COMMANDLINE"
+  exit 1
+
+else
+  cmd = ARGV.dup
+
+  program = File.basename cmd.first
+
+  from = case program
+  when 'apt-get'
+    'apt'
+  when 'aptitude'
+    'aptitude'
+  when 'debfoster'
+    'debfoster'
+  when /^(?:deborphan|editkeep|orphaner)$/
+    'deborphan'
+  else
+    AptMarks::Logger.instance.error "Unknown program '#{program}', not syncing"
+    exec *cmd
+  end
+
+  to = AptMarks::WRITERS.keys.sort - [from, 'debug']
+
+  begin
+    AptMarks::Utils.system *cmd
+
+    AptMarks.sync from, to
+  rescue => e
+    AptMarks::Logger.instance.error "#{e.class}: #{e}"
+    exit 1
+  end
+end
