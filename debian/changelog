@@ -1,5 +1,5 @@
 apt-mark-sync (0.0~git20071228a-0ubuntu1) hardy; urgency=low
 
-  * Initial release.
+  * Initial release (LP: #179000).
 
  -- Johan Kiviniemi <debian@johan.kiviniemi.name>  Fri, 28 Dec 2007 04:18:10 +0200
