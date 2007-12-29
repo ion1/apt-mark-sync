@@ -1,5 +1,11 @@
 2007-12-29  Johan Kiviniemi  <devel@johan.kiviniemi.name>
 
+	Use Unix newlines in the man pages
+
+	* man/ams-run.1.txt, man/apt-mark-sync.1.txt: Convert from DOS to Unix
+	  newlines. I wonder how they ended up with DOS newlines in the first
+	  place?
+
 	Point to the Git branch in the man page
 
 	* man/ams-run.1.txt, man/apt-mark-sync.1.txt: Point to the Git branch
