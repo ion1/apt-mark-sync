@@ -1,46 +1,48 @@
 .\"     Title: ams-run
 .\"    Author: 
-.\" Generator: DocBook XSL Stylesheets v1.72.0 <http://docbook.sf.net/>
-.\"      Date: 09/23/2007
+.\" Generator: DocBook XSL Stylesheets v1.73.2 <http://docbook.sf.net/>
+.\"      Date: 12/29/2007
 .\"    Manual: 
 .\"    Source: 
 .\"
-.TH "AMS\-RUN" "1" "09/23/2007" "" ""
+.TH "AMS\-RUN" "1" "12/29/2007" "" ""
 .\" disable hyphenation
 .nh
 .\" disable justification (adjust text to left margin only)
 .ad l
 .SH "NAME"
-ams\-run \- run the given package manager and apt\-mark\-sync from it
+ams-run - run the given package manager and apt-mark-sync from it
 .SH "SYNOPSIS"
 \fBams\-run\fR \fICOMMANDLINE\fR
 .sp
 .SH "DESCRIPTION"
-\fBams\-run\fR runs \fICOMMANDLINE\fR and detects the package manager (such as aptitude or debfoster) from it. On success, it syncs packages' auto\-installed states from the package manager's database to other package managers.
+\fBams\-run\fR runs \fICOMMANDLINE\fR and detects the package manager (such as aptitude or debfoster) from it\. On success, it syncs packages\' auto\-installed states from the package manager\'s database to other package managers\.
 .sp
 .SH "EXAMPLES"
 .PP
 \fBams\-run aptitude install debfoster\fR
 .RS 4
-Installs debfoster using aptitude and synchronizes from aptitude to apt, debfoster and deborphan.
+Installs debfoster using aptitude and synchronizes from aptitude to apt, debfoster and deborphan\.
 .RE
 .PP
 \fBams\-run debfoster\fR
 .RS 4
-Runs debfoster and synchronizes from debfoster to apt, aptitude and deborphan.
+Runs debfoster and synchronizes from debfoster to apt, aptitude and deborphan\.
 .RE
 .SH "AUTHOR"
-Written by Johan Kiviniemi <\fIdebian@johan.kiviniemi.name\fR\&[1]>
+Written by Johan Kiviniemi <\fIdebian@johan\.kiviniemi\.name\fR\&[1]>
 .sp
 .SH "RESOURCES"
-Web site: \fIhttp://johan.kiviniemi.name/software/apt\-mark\-sync/\fR
+Web site: \fIhttp://johan\.kiviniemi\.name/software/apt\-mark\-sync/\fR
 .sp
-Bzr branch: \fIhttp://johan.kiviniemi.name/software/bzr/apt\-mark\-sync/\fR
+Git branch: git://heh\.fi/ion/apt\-mark\-sync\.git
+.sp
+Git browser: \fIhttp://gitweb\.heh\.fi/?p=ion/apt\-mark\-sync\.git\fR
 .sp
 .SH "SEE ALSO"
 \fBapt\-mark\-sync\fR(1)
 .sp
-.SH "REFERENCES"
+.SH "NOTES"
 .IP " 1." 4
 debian@johan.kiviniemi.name
 .RS 4
