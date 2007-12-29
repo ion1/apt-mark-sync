@@ -1,5 +1,10 @@
 2007-12-29  Johan Kiviniemi  <devel@johan.kiviniemi.name>
 
+	Rebuild the man pages from the asciidoc sources
+
+	* man/ams-run.1, man/apt-mark-sync.1: Rebuild from man/ams-run.1.txt,
+	  man/apt-mark-sync.1.txt.
+
 	Use Unix newlines in the man pages
 
 	* man/ams-run.1.txt, man/apt-mark-sync.1.txt: Convert from DOS to Unix
