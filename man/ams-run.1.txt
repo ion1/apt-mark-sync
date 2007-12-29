@@ -41,7 +41,9 @@ RESOURCES
 ---------
 Web site: http://johan.kiviniemi.name/software/apt-mark-sync/[]
 
-Bzr branch: http://johan.kiviniemi.name/software/bzr/apt-mark-sync/[]
+Git branch: git://heh.fi/ion/apt-mark-sync.git
+
+Git browser: http://gitweb.heh.fi/?p=ion/apt-mark-sync.git[]
 
 
 SEE ALSO
