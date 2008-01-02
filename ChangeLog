@@ -1,5 +1,7 @@
 2008-01-02  Johan Kiviniemi <johan@kiviniemi.name>
 
+	Release 0.0.2
+
 	Rebuild the man pages from the asciidoc sources
 
 	* man/ams-run.1, man/apt-mark-sync.1: Rebuild from man/ams-run.1.txt,
