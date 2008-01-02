@@ -1,3 +1,10 @@
+2008-01-02  Johan Kiviniemi <johan@kiviniemi.name>
+
+	Add licensing info to man pages
+
+	* man/ams-run.1.txt, man/apt-mark-sync.1.txt: Add licensing info to
+	  the man pages as well.
+
 2008-01-01  Johan Kiviniemi  <devel@johan.kiviniemi.name>
 
 	Release 0.0.1.
