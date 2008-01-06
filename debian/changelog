@@ -1,4 +1,12 @@
-apt-mark-sync (0.0~git20071229a-0ubuntu0.1) hardy; urgency=low
+apt-mark-sync (0.0.2-0ubuntu1~ppa1) hardy; urgency=low
+
+  * Upstream released 0.0.2.
+  * Removed the Vcs-* fields since they pointed to a private branch not
+    accessible by ~ubuntu-dev.
+
+ -- Johan Kiviniemi <debian@johan.kiviniemi.name>  Wed, 02 Jan 2008 03:00:15 +0200
+
+apt-mark-sync (0.0~git20071229a-0ubuntu1) hardy; urgency=low
 
   * Initial release (LP: #179000).
 

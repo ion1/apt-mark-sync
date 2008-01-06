@@ -1,3 +1,21 @@
+2008-01-02  Johan Kiviniemi <johan@kiviniemi.name>
+
+	Release 0.0.2
+
+	Rebuild the man pages from the asciidoc sources
+
+	* man/ams-run.1, man/apt-mark-sync.1: Rebuild from man/ams-run.1.txt,
+	  man/apt-mark-sync.1.txt.
+
+	Add licensing info to man pages
+
+	* man/ams-run.1.txt, man/apt-mark-sync.1.txt: Add licensing info to
+	  the man pages as well.
+
+2008-01-01  Johan Kiviniemi  <devel@johan.kiviniemi.name>
+
+	Release 0.0.1.
+
 2007-12-29  Johan Kiviniemi  <devel@johan.kiviniemi.name>
 
 	Rebuild the man pages from the asciidoc sources
