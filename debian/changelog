@@ -1,8 +1,8 @@
-apt-mark-sync (0.0.2-0ubuntu1.1) UNRELEASED; urgency=low
+apt-mark-sync (0.0.2-0ubuntu2) hardy; urgency=low
 
   * debian/rules: Add a get-orig-source target.
 
- -- Johan Kiviniemi <debian@johan.kiviniemi.name>  Thu, 07 Feb 2008 05:52:26 +0200
+ -- Johan Kiviniemi <debian@johan.kiviniemi.name>  Thu, 07 Feb 2008 06:11:29 +0200
 
 apt-mark-sync (0.0.2-0ubuntu1) hardy; urgency=low
 
